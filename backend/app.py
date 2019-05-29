@@ -1,11 +1,25 @@
-from flask import Flask
+from flask import Flask, jsonify, request
+from werkzeug.exceptions import BadRequest
+from model import predict
+import os
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["GET"])
 def index():
-    return "OK"
+    return jsonify({"status":"ok"})
+
+
+@app.route("/predict", methods=["POST"])
+def predict_view():
+    input_file = request.files.get('file')
+    if not input_file:
+        return BadRequest("File not present in request")
+    input_file.save('temp.mp3')
+    genre = predict("temp.mp3")
+    os.remove('temp.mp3')
+    return jsonify({'genre':genre})
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
