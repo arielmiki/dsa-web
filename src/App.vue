@@ -1,11 +1,12 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+<template lang="pug">
+    v-app
+      v-toolbar(color="secondary").white--text
+        v-toolbar-title Music Genre Classifier
+      router-view
+      v-footer(color="primary")
+        v-layout(justify-center wrap)
+          v-flex(shrink)
+            p.body-1 &copy; {{ new Date().getFullYear() }} — <strong>fsociety</strong>
 </template>
 
 <style lang="scss">

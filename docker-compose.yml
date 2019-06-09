@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  frontend:
+  backend:
     build:
-      context: backend/
-      dockerfile: backend/Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
     image: dsa-backend
     container_name: dsa-backend
     environment:
