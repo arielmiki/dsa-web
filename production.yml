@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: dsa-backend
+    container_name: dsa-backend
+    environment:
+      - PORT=5005
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:dsa.arielmiki.me;PathPrefixStrip:/api"
+      - "traefik.port=5005"
+      - "traefik.frontend.protocol=https"
+      
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dsa-frontend
+    container_name: dsa-frontend
+    environment:
+      - BACKEND=https://dsa.localhost/api
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:dsa.arielmiki.me"
+      - "traefik.port=8080"
+      - "traefik.frontend.protocol=https"
+
+networks:
+  web:
+    external: true

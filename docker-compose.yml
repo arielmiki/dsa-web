@@ -18,7 +18,5 @@ services:
       dockerfile: Dockerfile
     image: dsa-frontend
     container_name: dsa-frontend
-    # environment:
-    #   - BACKEND=https://dsa.arielmiki.me/api
     ports:
       - 8080:8080
