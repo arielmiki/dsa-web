@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: backend/
+      dockerfile: backend/Dockerfile
+    image: dsa-backend
+    container_name: dsa-backend
+    environment:
+      - PORT=5005
+    ports:
+      - 5005:5005
