@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from flask_cors import cross_origin
 from werkzeug.exceptions import BadRequest
 from model import predict
 import os
@@ -6,11 +7,13 @@ import os
 app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
+@cross_origin
 def index():
     return jsonify({"status":"ok"})
 
 
 @app.route("/predict", methods=["POST"])
+@cross_origin
 def predict_view():
     input_file = request.files.get('file')
     if not input_file:
