@@ -2,7 +2,7 @@
   v-container.primary(fill-height fluid justify-center)
     v-layout(justify-center align-center column)
       v-flex(shrink)
-        h1.headlinefont-weight-medium Choose any local Indonesian song and you'll get the genre :)
+        h1.headlinefont-weight-medium Choose any traditional Indonesian song and you'll get the genre :)
       v-flex.ma-3(shrink)
         v-btn.text-capitalize(
           :loading="loading"
@@ -13,7 +13,7 @@
           v-icon(right) music_note
         input(type="file" ref="picker" style="display:none" accept="audio/mp3" @change="onFilePicked")
       v-flex.ma-3(shrink v-if="isPredicted")
-        p.title.mb-1 Musik anda bergenre
+        p.title.mb-1 Your music genre is
         span.red--text.display-1.font-weight-black {{genre}}
       
 </template>
