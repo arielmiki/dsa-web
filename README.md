@@ -1,29 +1,10 @@
-# dsa-web
+# DSA Project WEB
+Indonesian music genre classifier using ANN. This is the final applicaiton of DSA (Data Science and Analytics) Course.
 
-## Project setup
-```
-npm install
-```
+## Usage
+- Open [dsa.arielmiki.me](https://dsa.arielmiki.me)
+- Upload your music and get the genre!
+- Have fun :)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Model explanation
+Using ANN (Artificial Neural Network) that is trained using Mel Frequency Cepstral Coefficient (MFCC). This repository contains pre-trained model that can be accessed [here](https://github.com/arielmiki/dsa-web/blob/master/backend/model.pkl). You can contribute by opening a pull request.
