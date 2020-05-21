@@ -2,7 +2,7 @@
 Indonesian music genre classifier using ANN. This is the final applicaiton of DSA (Data Science and Analytics) Course.
 
 ## Usage
-- Open [dsa.arielmiki.me](https://dsa.arielmiki.me)
+- Open [dsa.arielmiki.com](https://dsa.arielmiki.com)
 - Upload your music and get the genre!
 - Have fun :)
 

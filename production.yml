@@ -13,7 +13,7 @@ services:
       - web
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:dsa.arielmiki.me;PathPrefixStrip:/api"
+      - "traefik.frontend.rule=Host:dsa.arielmiki.com;PathPrefixStrip:/api"
       - "traefik.port=5005"
       - "traefik.frontend.protocol=https"
       
@@ -29,7 +29,7 @@ services:
       - web
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:dsa.arielmiki.me"
+      - "traefik.frontend.rule=Host:dsa.arielmiki.com"
       - "traefik.port=8080"
       - "traefik.frontend.protocol=https"
 
